@@ -3,8 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
-// UI (Bootstrap)
+// Third Party (UI frameworks, etc...)
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Routing
@@ -20,7 +22,6 @@ import * as ViewComponents from 'app/views';
 import * as SheetComponents from 'app/views/cheat-sheets';
 
 
-
 @NgModule({
     // Modules
     imports: [
@@ -28,7 +29,8 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         RouterModule.forRoot([]),
         FormsModule,
         HttpClientModule,
-        NgbModule.forRoot(),
+        NgbModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ],
     // Components
     declarations: [

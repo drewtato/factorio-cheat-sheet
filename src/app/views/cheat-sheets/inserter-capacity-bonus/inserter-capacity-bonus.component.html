@@ -1,7 +1,7 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
 
     <p class="card-text">
-        <strong><a href="https://wiki.factorio.com/Inserter_capacity_bonus_(research)" target="_blank">Inserter capacity research</a></strong>
+        <strong><a href="https://wiki.factorio.com/Inserter_capacity_bonus_(research)" target="_blank" rel="noopener">Inserter capacity research</a></strong>
         is used to increase the stack size of the inserters.
     </p>
     <p>
@@ -11,7 +11,7 @@
 
     <table class="table table-sm table-hover fixed-width">
         <caption class="text-center">Grabbed Items</caption>
-        <thead>
+        <thead class="text-center">
             <tr>
                 <th>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Lab')"></app-factorio-icon>
@@ -36,11 +36,11 @@
                     <app-factorio-icon *ngIf="idx>0" [icon]="dataService.getFactorioIcon('Inserter_capacity_bonus_(research)', item?.tech)" class="bg-factorio-green"></app-factorio-icon>
                 </td>
                 <td>
-                    <strong>{{item?.nonStackItems}}</strong>
+                    <strong>{{item?.nonStackItems}} </strong>
                     <span *ngIf="item.nonStackBonus">({{item.nonStackBonus}})</span>
                 </td>
                 <td>
-                    <strong>{{item?.stackItems}}</strong>
+                    <strong>{{item?.stackItems}} </strong>
                     <span *ngIf="item.stackBonus">({{item.stackBonus}})</span>
                 </td>
             </tr>
